@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FPI – Project Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-main: #f8f8f6;
+      --text-main: #121212;
+      --text-soft: #555;
+      --border-soft: rgba(0,0,0,0.08);
+      --accent: #111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-soft);
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /*lang button*/
+    .lang-btn { 
+        cursor: pointer; 
+        border-radius: 30px; 
+        background: rgba(0,0,0,0.05); 
+        border: none; 
+        padding: 6px 12px; 
+        font-size: 0.8rem; 
+        color: var(--text-main); 
+    }
+    .lang-btn:hover { 
+        background: white; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    /* MAIN */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 160px 20px 80px;
+    }
+
+    .glass-panel {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+      padding: 3rem;
+    }
+
+    /* PROJECT HEADER */
+    .project-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 30px;
+      background: rgba(0,0,0,0.05);
+      margin-bottom: 12px;
+    }
+
+    .project-header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .project-title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .project-logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border-radius: 14px;
+        padding: 8px;
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+
+    /* CONTENT */
+    .justified-text {
+      max-width: 860px;
+    }
+
+    .justified-text p {
+      font-size: 15.5px;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+
+    .justified-text h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 45px 0 20px;
+    }
+
+    .list-styled {
+      list-style: none;
+      margin: 30px 0 40px;
+    }
+
+    .list-styled li {
+      padding-left: 18px;
+      margin-bottom: 14px;
+      border-left: 3px solid var(--accent);
+      font-size: 14.5px;
+      color: #333;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta p {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.35s ease;
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* GALLERY */
+    .gallery-title {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 60px 0 25px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .project-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      cursor: zoom-in;
+      border: 1px solid var(--border-soft);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+    }
+
+    /* MODAL */
+    .image-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .image-modal.show {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 30px;
+      }
+
+      .glass-panel {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="../index.html">Kim Ngan THAI</a>
+
+    <div class="header-right">
+      <a href="../index.html#projects">&larr; 
+        <span class="lang-en">Back to portofolio</span>
+        <span class="lang-fr" style="display:none">Retourner au portofolio</span>
+      </a>
+
+      <button id="lang-toggle" class="lang-btn">
+        <span class="lang-text">EN</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main class="container">
+  <section class="glass-panel">
+
+    <div class="project-header">
+        <div class="badge">Data Analysis / Web Dev</div>
+        <div class="project-title">
+            <img src="../images/fpi-logo.png" alt="France Property Insights logo" class="project-logo">
+
+            <div>
+            <h1>France Property Insights</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="justified-text">
+      <p>
+        This thesis was conducted as part of the Master's in Economic Analysis and Policy
+        (specialization: Statistics for Evaluation and Forecasting) at the University of Reims
+        Champagne-Ardenne. It explores <strong>Learning Analytics</strong> through a case study of
+        the online learning platform <em>Éducapacités</em>.
+      </p>
+
+      <p>
+        In response to the digital transformation of education—intensified by the 2020 global health
+        crisis—the thesis investigates how user interaction data can help improve learner engagement.
+        The core objective is to develop a structured analytical framework for understanding user
+        behaviors on digital platforms, thereby identifying improvement pathways tailored to diverse
+        learner profiles.
+      </p>
+
+      <h3>Key Contributions</h3>
+
+      <ul class="list-styled">
+        <li>
+          <strong>Data Anonymization & Cleaning:</strong> Applied GDPR-compliant SHA-256 hashing to
+          anonymize sensitive user data, followed by extensive cleaning and restructuring of a large
+          dataset (initially over 4,000 columns).
+        </li>
+        <li>
+          <strong>Engagement Indicators:</strong> Defined measurable engagement indicators based on
+          literature, including session duration, visit frequency, and navigation diversity.
+        </li>
+        <li>
+          <strong>Behavioral Analysis:</strong> Identified common navigation paths and engagement
+          patterns using exploratory statistics and visual analytics.
+        </li>
+        <li>
+          <strong>Tools Used:</strong> Analysis conducted using R and Python, with a transition to
+          Python to align with the research team’s stack.
+        </li>
+      </ul>
+
+      <p>
+        Despite constraints, the project provides a first operational layer for future research in
+        Learning Analytics, contributing directly to a doctoral project and collaborative research
+        involving Éducapacités’ development team.
+      </p>
+    </div>
+
+    <div class="cta">
+      <p>Explore the full project, including scripts and reports</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn primary">Read Report</a>
+        <a href="#" class="btn secondary">View GitHub</a>
+      </div>
+    </div>
+
+    <h3 class="gallery-title">Visual Gallery</h3>
+    <div class="project-grid">
+      <img src="https://via.placeholder.com/600x400" alt="">
+      <img src="https://via.placeholder.com/600x400" alt="">
+      <img src="https://via.placeholder.com/600x400" alt="">
+      <img src="https://via.placeholder.com/600x400" alt="">
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2025 — Kim Ngan THAI
+</footer>
+<script src="../main.js"></script>
+
+<div class="image-modal" id="imageModal">
+  <img id="modalImage" src="" alt="">
+</div>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  document.querySelectorAll(".project-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+</script>
+
+
+</body>
+</html>
