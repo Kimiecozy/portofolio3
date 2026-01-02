@@ -1,5 +1,3 @@
-![Logo](cp.png)
-
 # Portfolio 💻
 
 Welcome to **Amine's Portfolio Showcase**!  
