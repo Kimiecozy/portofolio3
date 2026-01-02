@@ -1,6 +1,6 @@
 ![Logo](cp.png)
 
-# Amine Portfolio Showcase 💻
+# Portfolio 💻
 
 Welcome to **Amine's Portfolio Showcase**!  
 A modern **portfolio website** designed to showcase projects, skills, and personal work using **HTML, CSS, and JavaScript**.  
@@ -10,7 +10,7 @@ It is fully **responsive**, interactive, and visually appealing across desktop, 
 
 ## Live Demo 🚀
 
-You can view the live website here: [Live Demo](https://stalwart-baklava-8ed433.netlify.app/)
+You can view the live website here: [Live Demo]()
 
 ---
 
@@ -50,8 +50,7 @@ You can view the live website here: [Live Demo](https://stalwart-baklava-8ed433.
 
 This project is licensed under the terms described in the [LICENSE](LICENSE) file.
 
----
-
+# Author 
 ## 🚀 How to Use / Customize
 
 1. **Clone the repository:**
@@ -73,3 +72,5 @@ Made with ❤️ by **Amine Hamzaoui**
 
 ```bash
 git clone https://github.com/Saboo24/portfolio-showcase.git
+
+
