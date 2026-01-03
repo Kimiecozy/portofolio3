@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FPI – Project Study</title>
+  <title>FPI – BI Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
   <style>
     :root {
@@ -62,19 +59,20 @@
       font-weight: 500;
     }
 
-    /*lang button*/
-    .lang-btn { 
-        cursor: pointer; 
-        border-radius: 30px; 
-        background: rgba(0,0,0,0.05); 
-        border: none; 
-        padding: 6px 12px; 
-        font-size: 0.8rem; 
-        color: var(--text-main); 
+    .lang-btn {
+      cursor: pointer;
+      border-radius: 30px;
+      background: rgba(0,0,0,0.05);
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      color: var(--text-main);
     }
-    .lang-btn:hover { 
-        background: white; 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    .lang-btn:hover {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
     /* MAIN */
     .container {
@@ -107,7 +105,24 @@
       padding: 6px 14px;
       border-radius: 30px;
       background: rgba(0,0,0,0.05);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .project-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 14px;
+      padding: 8px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .project-header h1 {
@@ -117,39 +132,51 @@
       line-height: 1.2;
     }
 
-    .project-title {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+    /* VIDEO */
+    .dashboard-showcase {
+      margin: 70px 0 90px;
+      text-align: center;
     }
 
-    .project-logo {
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
-        border-radius: 14px;
-        padding: 8px;
-        background: rgba(255,255,255,0.6);
-        border: 1px solid rgba(0,0,0,0.08);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      background: black;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.35);
     }
 
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    .video-caption {
+      margin-top: 18px;
+      font-size: 13.5px;
+      color: #777;
+      font-style: italic;
+    }
 
     /* CONTENT */
     .justified-text {
       max-width: 860px;
+      margin: auto;
     }
 
     .justified-text p {
       font-size: 15.5px;
-      color: #2a2a2a;
       margin-bottom: 22px;
+      color: #2a2a2a;
     }
 
     .justified-text h3 {
       font-family: "Playfair Display", serif;
       font-size: 22px;
-      margin: 45px 0 20px;
+      margin: 50px 0 20px;
     }
 
     .list-styled {
@@ -168,13 +195,13 @@
     /* CTA */
     .cta {
       text-align: center;
-      margin: 60px 0;
+      margin: 80px 0 20px;
     }
 
     .cta p {
       font-style: italic;
       color: #777;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .cta-buttons {
@@ -209,59 +236,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
-    /* GALLERY */
-    .gallery-title {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      margin: 60px 0 25px;
-      padding-top: 30px;
-      border-top: 1px solid var(--border-soft);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .project-grid img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 18px;
-      cursor: zoom-in;
-      border: 1px solid var(--border-soft);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .project-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.18);
-    }
-
-    /* MODAL */
-    .image-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .image-modal.show {
-      display: flex;
-    }
-
-    .image-modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 20px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-    }
-
     footer {
       margin-top: 120px;
       padding: 40px 20px;
@@ -287,12 +261,12 @@
 
 <header>
   <div class="header-content">
-    <a href="../index.html">Kim Ngan THAI</a>
+    <a href="./index.html">Kim Ngan THAI</a>
 
     <div class="header-right">
-      <a href="../index.html#projects">&larr; 
-        <span class="lang-en">Back to portofolio</span>
-        <span class="lang-fr" style="display:none">Retourner au portofolio</span>
+      <a href="./#projects">&larr;
+        <span class="lang-en">Back to portfolio</span>
+        <span class="lang-fr" style="display:none">Retour au portfolio</span>
       </a>
 
       <button id="lang-toggle" class="lang-btn">
@@ -302,83 +276,93 @@
   </div>
 </header>
 
-
 <main class="container">
   <section class="glass-panel">
 
     <div class="project-header">
-        <div class="badge">Data Visualisation</div>
-        <div class="project-title">
-            <img src="../images/fpi-logo.png" alt="France Property Insights logo" class="project-logo">
+      <div class="badge">Data Analytics & BI</div>
 
-            <div>
-            <h1>Dashboard</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="justified-text">
-      <p>
-        This thesis was conducted as part of the Master's in Economic Analysis and Policy
-        (specialization: Statistics for Evaluation and Forecasting) at the University of Reims
-        Champagne-Ardenne. It explores <strong>Learning Analytics</strong> through a case study of
-        the online learning platform <em>Éducapacités</em>.
-      </p>
-
-      <p>
-        In response to the digital transformation of education—intensified by the 2020 global health
-        crisis—the thesis investigates how user interaction data can help improve learner engagement.
-        The core objective is to develop a structured analytical framework for understanding user
-        behaviors on digital platforms, thereby identifying improvement pathways tailored to diverse
-        learner profiles.
-      </p>
-
-      <h3>Key Contributions</h3>
-
-      <ul class="list-styled">
-        <li>
-          <strong>Data Anonymization & Cleaning:</strong> Applied GDPR-compliant SHA-256 hashing to
-          anonymize sensitive user data, followed by extensive cleaning and restructuring of a large
-          dataset (initially over 4,000 columns).
-        </li>
-        <li>
-          <strong>Engagement Indicators:</strong> Defined measurable engagement indicators based on
-          literature, including session duration, visit frequency, and navigation diversity.
-        </li>
-        <li>
-          <strong>Behavioral Analysis:</strong> Identified common navigation paths and engagement
-          patterns using exploratory statistics and visual analytics.
-        </li>
-        <li>
-          <strong>Tools Used:</strong> Analysis conducted using R and Python, with a transition to
-          Python to align with the research team’s stack.
-        </li>
-      </ul>
-
-      <p>
-        Despite constraints, the project provides a first operational layer for future research in
-        Learning Analytics, contributing directly to a doctoral project and collaborative research
-        involving Éducapacités’ development team.
-      </p>
-    </div>
-
-    <div class="cta">
-      <p>Explore the full project, including scripts and reports</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn primary">Read Report</a>
-        <a href="#" class="btn secondary">View GitHub</a>
+      <div class="project-title">
+        <img src="../images/fpi-logo.png" alt="France Property Insight logo" class="project-logo">
+        <h1>Real Estate BI Dashboard</h1>
       </div>
     </div>
 
-    <h3 class="gallery-title">Visual Gallery</h3>
-    <div class="project-grid">
-        <div class="video-wrapper">
-            <video autoplay muted loop controls playsinline>
-                <source src="../images/dashboard_fpi.mp4" type="video/mp4">
-            </video>
-        </div>
+    <!-- VIDEO -->
+    <section class="dashboard-showcase">
+      <div class="video-container">
+        <video autoplay muted loop playsinline controls>
+          <source src="../images/dashboard_fpi.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p class="video-caption">
+        <span class="lang-en">Interactive Power BI dashboard – Île-de-France real estate market (2021–2024)</span>
+        <span class="lang-fr" style="display:none">Dashboard Power BI interactif – Marché immobilier en Île-de-France (2021–2024)</span>
+      </p>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <div class="justified-text">
+
+      <p class="lang-en">
+        This interactive <strong>Power BI dashboard</strong> provides a consolidated view of the
+        residential real estate market in <strong>Île-de-France</strong> over the 2021–2024 period.
+        It supports market exploration, trend analysis, and strategic decision-making.
+      </p>
+
+      <p class="lang-fr" style="display:none">
+        Ce <strong>dashboard Power BI</strong> interactif propose une vision consolidée du marché
+        immobilier résidentiel en <strong>Île-de-France</strong> sur la période 2021–2024.
+        Il vise l’exploration du marché, l’analyse des tendances et l’aide à la décision.
+      </p>
+
+      <h3>
+        <span class="lang-en">Dashboard scope</span>
+        <span class="lang-fr" style="display:none">Périmètre du dashboard</span>
+      </h3>
+
+      <ul class="list-styled">
+        <li><span class="lang-en"><strong>Filters:</strong> Year, department, city, property type, number of rooms.</span><span class="lang-fr" style="display:none"><strong>Filtres :</strong> Année, département, commune, type de bien, nombre de pièces.</span></li>
+        <li><span class="lang-en"><strong>Visuals:</strong> price trends, sales volumes, property distribution, interactive map.</span><span class="lang-fr" style="display:none"><strong>Visuels :</strong> évolution des prix, volumes de ventes, typologie des biens, carte interactive.</span></li>
+        <li><span class="lang-en"><strong>KPIs:</strong> sales count, total value, average surfaces, average rooms.</span><span class="lang-fr" style="display:none"><strong>KPI :</strong> nombre de ventes, valeur totale, surfaces moyennes, pièces moyennes.</span></li>
+      </ul>
+
+      <h3>
+        <span class="lang-en">Limitations</span>
+        <span class="lang-fr" style="display:none">Limites</span>
+      </h3>
+
+      <ul class="list-styled">
+        <li><span class="lang-en">Lot-based transactions may bias price calculations.</span><span class="lang-fr" style="display:none">Transactions par lots pouvant biaiser les calculs de prix.</span></li>
+        <li><span class="lang-en">Lack of detailed property attributes (floor, condition, energy rating).</span><span class="lang-fr" style="display:none">Manque d’attributs fins (étage, état, DPE).</span></li>
+      </ul>
+
+      <h3>
+        <span class="lang-en">Tools</span>
+        <span class="lang-fr" style="display:none">Outils</span>
+      </h3>
+
+      <ul class="list-styled">
+        <li>Power BI • Power Query • DAX</li>
+      </ul>
+
     </div>
 
+    <!-- CTA -->
+    <div class="cta">
+      <p>
+        <span class="lang-en">Explore the full project and technical details</span>
+        <span class="lang-fr" style="display:none">Explorer le projet et les détails techniques</span>
+      </p>
+
+      <div class="cta-buttons">
+        <a href="https://univreimsfr-my.sharepoint.com/:u:/g/personal/kim-ngan_thai_etudiant_univ-reims_fr/IQD_kX0bBB24RZIoe1a7rutJAci2wNOdnAc3f9RJjDeZEek?e=njVtvS" class="btn primary">
+          <span class="lang-en">View dashboard</span>
+          <span class="lang-fr" style="display:none">Voir le dashboard</span>
+        </a>
+      </div>
+    </div>
 
   </section>
 </main>
@@ -386,28 +370,7 @@
 <footer>
   © 2025 — Kim Ngan THAI
 </footer>
+
 <script src="../main.js"></script>
-
-<div class="image-modal" id="imageModal">
-  <img id="modalImage" src="" alt="">
-</div>
-
-<script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-
-  document.querySelectorAll(".project-grid img").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.src;
-      modal.classList.add("show");
-    });
-  });
-
-  modal.addEventListener("click", () => {
-    modal.classList.remove("show");
-  });
-</script>
-
-
 </body>
 </html>

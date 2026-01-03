@@ -287,11 +287,11 @@
 
 <header>
   <div class="header-content">
-    <a href="../index.html">Kim Ngan THAI</a>
+    <a href="/index.html">Kim Ngan THAI</a>
 
     <div class="header-right">
-      <a href="../index.html#projects">&larr; 
-        <span class="lang-en">Back to portofolio</span>
+      <a href="/#projects">&larr; 
+        <span class="lang-en">Back to portfolio</span>
         <span class="lang-fr" style="display:none">Retourner au portofolio</span>
       </a>
 
@@ -307,7 +307,7 @@
   <section class="glass-panel">
 
     <div class="project-header">
-        <div class="badge">Data Analysis / Web Dev</div>
+        <div class="badge">Real Estate Data Analytics</div>
         <div class="project-title">
             <img src="../images/fpi-logo.png" alt="France Property Insights logo" class="project-logo">
 
@@ -318,64 +318,172 @@
     </div>
 
     <div class="justified-text">
-      <p>
-        This thesis was conducted as part of the Master's in Economic Analysis and Policy
-        (specialization: Statistics for Evaluation and Forecasting) at the University of Reims
-        Champagne-Ardenne. It explores <strong>Learning Analytics</strong> through a case study of
-        the online learning platform <em>Éducapacités</em>.
-      </p>
 
-      <p>
-        In response to the digital transformation of education—intensified by the 2020 global health
-        crisis—the thesis investigates how user interaction data can help improve learner engagement.
-        The core objective is to develop a structured analytical framework for understanding user
-        behaviors on digital platforms, thereby identifying improvement pathways tailored to diverse
-        learner profiles.
-      </p>
+      <!-- English version -->
+      <span class="lang-en">
+        <p>
+          <strong>France Property Insight (FPI)</strong> is a data-driven real estate analytics and
+          forecasting product designed to support informed decision-making in the French property market.
+          Developed within a Master’s program in <strong>Statistics for Evaluation and Forecasting</strong>
+          at the University of Reims, the project translates advanced statistical modeling 
+          and machine learning into concrete business insights.
+        </p>
 
-      <h3>Key Contributions</h3>
+        <p>
+          FPI addresses key market challenges by enabling prospective buyers to estimate acquisition
+          budgets and by allowing property owners to assess and anticipate the long-term value of their
+          assets. The product positions itself as a decision-support tool, combining predictive analytics,
+          market segmentation, and spatial analysis.
+          
+          Predictive models are based on supervised machine learning techniques and leverage large-scale 
+          transactional data to identify pricing drivers, temporal trends, and geographic disparities
+          across the French real estate market.
+        </p>
 
-      <ul class="list-styled">
-        <li>
-          <strong>Data Anonymization & Cleaning:</strong> Applied GDPR-compliant SHA-256 hashing to
-          anonymize sensitive user data, followed by extensive cleaning and restructuring of a large
-          dataset (initially over 4,000 columns).
-        </li>
-        <li>
-          <strong>Engagement Indicators:</strong> Defined measurable engagement indicators based on
-          literature, including session duration, visit frequency, and navigation diversity.
-        </li>
-        <li>
-          <strong>Behavioral Analysis:</strong> Identified common navigation paths and engagement
-          patterns using exploratory statistics and visual analytics.
-        </li>
-        <li>
-          <strong>Tools Used:</strong> Analysis conducted using R and Python, with a transition to
-          Python to align with the research team’s stack.
-        </li>
-      </ul>
+      </span>
 
-      <p>
-        Despite constraints, the project provides a first operational layer for future research in
-        Learning Analytics, contributing directly to a doctoral project and collaborative research
-        involving Éducapacités’ development team.
-      </p>
+      <!-- French version -->
+      <span class="lang-fr" style="display:none">
+
+        <p>
+          <strong>France Property Insight (FPI)</strong> est un produit d’analytique et de prévision
+          immobilière conçu pour faciliter la prise de décision sur le marché immobilier français.
+          Développé dans le cadre du Master <strong>Statistique pour l’Évaluation et la Prévision</strong>
+          à l’Université de Reims, le projet transforme des méthodes avancées de modélisation statistique 
+          et de machine learning en insights opérationnels.
+        </p>
+
+        <p>
+          FPI répond à des enjeux concrets du marché en permettant aux futurs acquéreurs d’estimer leur
+          budget d’achat et aux propriétaires d’évaluer et d’anticiper la valeur de leurs biens sur le
+          long terme. Le produit se positionne comme un outil d’aide à la décision intégrant prédiction
+          des prix, segmentation du marché et analyse spatiale. Les modèles prédictifs reposent sur des 
+          techniques d’apprentissage supervisé appliquées à des données transactionnelles massives, afin 
+          d’identifier les déterminants des prix, les dynamiques temporelles et les disparités géographiques 
+          du marché immobilier français.
+        </p>
+
+        
+
+
+      </span>
     </div>
 
+
+      <h3>Key Contributions</h3>
+      <span class="lang-en">
+        <ul class="list-styled">
+          <li>
+            <strong>Data Cleaning & Structuring :</strong> Cleaned, standardized, and restructured large-scale
+            real estate transaction data (over 2M records), addressing inconsistencies, missing values, and
+            heterogeneous formats to ensure analytical reliability.
+          </li>
+          <li>
+            <strong>Property aggregation :</strong> Designed and implemented aggregation rules to
+            reconstruct property-level transactions from lot-based sales, resolving a critical structural
+            issue in the source data where multiple lots correspond to a single address.
+          </li>
+          <li>
+            <strong>Exploratory Data Analysis :</strong> Conducted in-depth exploratory and statistical
+            analyses to identify pricing drivers, market dynamics, and geographic disparities across French
+            territories.
+          </li>
+          <li>
+            <strong>Data visualization :</strong> Developed analytical dashboards, charts, and interactive
+            maps to support insight generation and facilitate stakeholder understanding.
+          </li>
+          <li>
+            <strong>User Interface & UX :</strong> Contributed to the design and implementation of a
+            user-oriented interface, translating complex analytical outputs into clear and actionable visual
+            insights.
+          </li>
+          <li>
+            <strong>Tools used :</strong> Python ecosystem (pandas, NumPy, GeoPandas, Gradio), SQL
+            databases, data visualization libraries, and geospatial tools for analysis and mapping.
+          </li>
+        </ul>
+      </span>
+
+      <!-- Version française -->
+      <span class="lang-fr" style="display:none">
+
+        <h3>Contributions clés</h3>
+
+        <ul class="list-styled">
+          <li>
+            <strong>Nettoyage et structuration des données :</strong> Nettoyage, standardisation et
+            restructuration de données massives de transactions immobilières (plus de 2 millions
+            d’enregistrements), en traitant les incohérences, valeurs manquantes et formats hétérogènes afin
+            de garantir la fiabilité des analyses.
+          </li>
+          <li>
+            <strong>Logique d’agrégation des biens :</strong> Conception et implémentation de règles
+            d’agrégation permettant de reconstruire des transactions au niveau du bien à partir de ventes
+            par lots, résolvant un problème structurel majeur des données sources (plusieurs lots pour une
+            même adresse).
+          </li>
+          <li>
+            <strong>Analyse exploratoire des données (EDA) :</strong> Réalisation d’analyses exploratoires
+            et statistiques approfondies pour identifier les déterminants des prix, les dynamiques de
+            marché et les disparités géographiques entre territoires.
+          </li>
+          <li>
+            <strong>Visualisation des données :</strong> Création de graphiques analytiques, tableaux de
+            bord et cartes interactives afin de faciliter l’interprétation des résultats et la prise de
+            décision.
+          </li>
+          <li>
+            <strong>Interface utilisateur & UX :</strong> Contribution à la conception et à
+            l’implémentation d’une interface orientée utilisateur, transformant des résultats analytiques
+            complexes en visualisations claires et exploitables.
+          </li>
+          <li>
+            <strong>Outils :</strong> Écosystème Python (pandas, NumPy, GeoPandas, Gradio),
+            bases de données SQL, bibliothèques de visualisation et outils géospatiaux pour l’analyse et la
+            cartographie.
+          </li>
+        </ul>
+
+      </span>
+
     <div class="cta">
-      <p>Explore the full project, including scripts and reports</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn primary">Read Report</a>
-        <a href="#" class="btn secondary">View GitHub</a>
+
+      <p style="font-style: italic; color: #86868b; margin-bottom: 1.5rem; text-align: center;">
+        <span class="lang-en">Explore the full project, including scripts and reports</span>
+        <span class="lang-fr" style="display:none">
+          Explorez le projet complet, incluant scripts et rapports
+        </span>
+      </p>
+
+      <div class="cta-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+        <a href="../docs/fpi-report.pdf"
+          target="_blank"
+          rel="noopener"
+          class="btn primary">
+          <span class="lang-en">Read Report</span>
+          <span class="lang-fr" style="display:none">Lire le rapport</span>
+        </a>
+
+        <a href="https://github.com/Kimiecozy/France-Property-Insights.git"
+          target="_blank"
+          rel="noopener"
+          class="btn secondary">
+          <span class="lang-en">View GitHub</span>
+          <span class="lang-fr" style="display:none">Voir le dépôt GitHub</span>
+        </a>
+
       </div>
     </div>
 
+
     <h3 class="gallery-title">Visual Gallery</h3>
     <div class="project-grid">
-      <img src="https://via.placeholder.com/600x400" alt="">
-      <img src="https://via.placeholder.com/600x400" alt="">
-      <img src="https://via.placeholder.com/600x400" alt="">
-      <img src="https://via.placeholder.com/600x400" alt="">
+      <img src="../images/fpi-2.png" alt="">
+      <img src="../images/fpi-3.png" alt="">
+      <img src="../images/fpi-6.png" alt="">
+      <img src="../images/fpi-4.png" alt="">
+      <img src="../images/fpi-5.png" alt="">
     </div>
 
   </section>

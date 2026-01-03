@@ -1123,17 +1123,6 @@ body {
     margin: 0 auto;
   }
 
-  /*.home img,
-  .project-card img,
-  .service-card img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
-    object-fit: cover;
-  }*/
-
   .home-photo {
   width: 420px;
   height: 520px;
