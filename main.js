@@ -186,9 +186,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const cvLink = document.getElementById('cv-link');
     if(cvLink) {
         if (lang === 'fr') {
-            cvLink.setAttribute('href', 'assets/cv/cv_fr.pdf');
+            cvLink.setAttribute('href', 'docs/cv-data-main.pdf');
         } else {
-            cvLink.setAttribute('href', 'assets/cv/cv.pdf');
+            cvLink.setAttribute('href', 'docs/cv-data-main.pdf');
         }
     }
   }
