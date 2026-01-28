@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solia – Project Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-main: #f8f8f6;
+      --text-main: #121212;
+      --text-soft: #555;
+      --border-soft: rgba(0,0,0,0.08);
+      --accent: #111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-soft);
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /*lang button*/
+    .lang-btn { 
+        cursor: pointer; 
+        border-radius: 30px; 
+        background: rgba(0,0,0,0.05); 
+        border: none; 
+        padding: 6px 12px; 
+        font-size: 0.8rem; 
+        color: var(--text-main); 
+    }
+    .lang-btn:hover { 
+        background: white; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    /* MAIN */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 160px 20px 80px;
+    }
+
+    .glass-panel {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+      padding: 3rem;
+    }
+
+    /* PROJECT HEADER */
+    .project-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 30px;
+      background: rgba(0,0,0,0.05);
+      margin-bottom: 12px;
+    }
+
+    .project-header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .project-title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .project-logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border-radius: 14px;
+        padding: 8px;
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+
+    /* CONTENT */
+    .justified-text {
+      max-width: 860px;
+    }
+
+    .justified-text p {
+      font-size: 15.5px;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+
+    .justified-text h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 45px 0 20px;
+    }
+
+    .list-styled {
+      list-style: none;
+      margin: 30px 0 40px;
+    }
+
+    .list-styled li {
+      padding-left: 18px;
+      margin-bottom: 14px;
+      border-left: 3px solid var(--accent);
+      font-size: 14.5px;
+      color: #333;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta p {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.35s ease;
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* GALLERY */
+    .gallery-title {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 60px 0 25px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .project-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      cursor: zoom-in;
+      border: 1px solid var(--border-soft);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+    }
+
+    /* MODAL */
+    .image-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .image-modal.show {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 30px;
+      }
+
+      .glass-panel {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="../index.html">Kim Ngan THAI</a>
+
+    <div class="header-right">
+      <a href="../index.html#projects">&larr; 
+        <span class="lang-en">Back to portfolio</span>
+        <span class="lang-fr" style="display:none">Retourner au portofolio</span>
+      </a>
+
+      <button id="lang-toggle" class="lang-btn">
+        <span class="lang-text">EN</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main class="container">
+  <section class="glass-panel">
+
+    <div class="project-header">
+        <div class="badge">Scoring Credit B2B E-commerce</div>
+        <div class="project-title">
+            <img src="../images/fpi-logo.png" alt="France Property Insights logo" class="project-logo">
+
+            <div>
+            <h1>SolIA - solvabilité et business intelligence</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="justified-text">
+
+        <!-- English version -->
+        <span class="lang-en">
+            <p>
+            <strong>SolIA</strong> is a data-driven financial decision-support product designed to assess the
+            <strong>creditworthiness of e-commerce sellers</strong> in a B2B context.
+            Developed within a Master’s program in <strong>Statistics for Evaluation and Forecasting</strong>
+            at the University of Reims, the project leverages transactional and behavioral marketplace data
+            to support lending and risk management decisions.
+            </p>
+
+            <p>
+            Initially conceived as a product recommendation system, SolIA evolved into a
+            <strong>credit scoring and revenue forecasting solution</strong> tailored to e-commerce platforms.
+            By aggregating multi-source marketplace data at the seller level, the system evaluates financial
+            health, operational reliability, and customer satisfaction to determine loan eligibility.
+            </p>
+
+            <p>
+            SolIA combines a hybrid solvency score with a supervised machine learning model to predict
+            future revenue and estimate repayment capacity. The product is deployed as an interactive
+            decision tool, enabling real-time credit simulations and transparent, interpretable outputs
+            for financial stakeholders.
+            </p>
+        </span>
+
+        <!-- French version -->
+        <span class="lang-fr" style="display:none">
+
+            <p>
+            <strong>SolIA</strong> est un produit d’aide à la décision financière orienté data, conçu pour
+            évaluer la <strong>solvabilité des vendeurs e-commerce</strong> dans un contexte B2B.
+            Développé dans le cadre du Master <strong>Statistique pour l’Évaluation et la Prévision</strong>
+            à l’Université de Reims, le projet exploite des données transactionnelles et comportementales
+            issues de marketplaces afin de soutenir les décisions de financement et de gestion du risque.
+            </p>
+
+            <p>
+            Initialement pensé comme un système de recommandation de produits, SolIA a évolué vers une
+            <strong>solution de credit scoring et de prévision du chiffre d’affaires</strong> dédiée aux
+            plateformes e-commerce. En agrégeant des données multi-sources au niveau du vendeur, le système
+            mesure la santé financière, la fiabilité opérationnelle et la satisfaction client afin de
+            déterminer l’éligibilité à un prêt bancaire.
+            </p>
+
+            <p>
+            SolIA combine un score de solvabilité hybride et un modèle de machine learning supervisé pour
+            prédire les revenus futurs et estimer la capacité de remboursement avec l'intelligence artificielle. 
+            Le produit est déployé sous la forme d’un outil décisionnel interactif permettant de simuler des demandes 
+            de crédit en temps réel, avec des résultats transparents et interprétables pour les acteurs financiers.
+            </p>
+
+        </span>
+        </div>
+
+        <h3>Key Contributions</h3>
+
+        <span class="lang-en">
+        <ul class="list-styled">
+            <li>
+            <strong>Data aggregation & feature engineering :</strong> Aggregated six relational marketplace
+            datasets at seller level to construct financial, behavioral, and operational indicators.
+            </li>
+            <li>
+            <strong>Credit scoring design :</strong> Designed a hybrid solvency score combining performance,
+            customer satisfaction, late rate and delivery reliability to quantify credit risk.
+            </li>
+            <li>
+            <strong>Predictive modeling :</strong> Implemented a Random Forest regression model to forecast
+            future seller revenue, supporting loan eligibility and repayment capacity assessment.
+            </li>
+            <li>
+            <strong>Decision-support interface :</strong> Developed an interactive Streamlit dashboard to
+            simulate credit decisions with interpretable visual verdicts and business-oriented KPIs.
+            </li>
+            <li>
+            <strong>AI audit assistant :</strong> Developed an AI-powered chatbot to support financial audits
+            by generating analytical summaries, interpreting model outputs, and highlighting key risk signals.
+            </li>
+            <li>
+            <strong>API & system architecture :</strong> Designed a modular architecture using FastAPI for
+            model serving and real-time predictions.
+            </li>
+            <li>
+            <strong>Tools used :</strong> Python (pandas, NumPy, scikit-learn), SQL, Streamlit, FastAPI,
+            Jupyter Notebook, and data visualization libraries.
+            </li>
+        </ul>
+        </span>
+
+        <!-- Version française -->
+        <span class="lang-fr" style="display:none">
+
+
+        <ul class="list-styled">
+            <li>
+            <strong>Agrégation des données et feature engineering :</strong> Agrégation de six bases de données
+            relationnelles e-commerce au niveau vendeur afin de construire des indicateurs financiers,
+            comportementaux et opérationnels.
+            </li>
+            <li>
+            <strong>Conception du scoring de solvabilité :</strong> Élaboration d’un score hybride combinant
+            performance commerciale, satisfaction client et fiabilité logistique pour mesurer le risque crédit.
+            </li>
+            <li>
+            <strong>Modélisation prédictive :</strong> Implémentation d’un modèle de régression Random Forest
+            pour la prévision du chiffre d’affaires futur, utilisé pour l’évaluation de l’éligibilité au prêt
+            et de la capacité de remboursement.
+            </li>
+            <li>
+            <strong>Chatbot d’aide à l’audit :</strong> Développement d’un chatbot IA générant des synthèses
+            d’audit financier, expliquant les résultats des modèles et mettant en évidence les facteurs de risque.
+            </li>
+            <li>
+            <strong>Outil d’aide à la décision :</strong> Développement d’un dashboard interactif sous
+            Streamlit permettant de simuler des décisions de crédit avec des indicateurs clairs et interprétables.
+            </li>
+            <li>
+            <strong>Architecture API :</strong> Conception d’une architecture modulaire intégrant FastAPI pour
+            l’exposition des modèles et des prédictions en temps réel.
+            </li>
+            <li>
+            <strong>Outils :</strong> Python (pandas, NumPy, scikit-learn), SQL, Streamlit, FastAPI,
+            Jupyter Notebook et bibliothèques de visualisation de données.
+            </li>
+        </ul>
+
+        </span>
+
+
+      <p style="font-style: italic; color: #86868b; margin-bottom: 1.5rem; text-align: center;">
+        <span class="lang-en">Explore the full project, including scripts and reports</span>
+        <span class="lang-fr" style="display:none">
+          Explorez le projet complet, incluant scripts et rapports
+        </span>
+      </p>
+
+      <div class="cta-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+
+        <a href="https://soliasep2426.streamlit.app/"
+          target="_blank"
+          rel="noopener"
+          class="btn primary">
+          <span class="lang-en">Live demo</span>
+          <span class="lang-fr" style="display:none">Live demo</span>
+        </a>
+
+        <a href="../docs/Solia.pdf"
+          target="_blank"
+          rel="noopener"
+          class="btn primary">
+          <span class="lang-en">View customer demo</span>
+          <span class="lang-fr" style="display:none">Voir demo client</span>
+        </a>
+
+        <a href="https://github.com/Kimiecozy/solia.git"
+          target="_blank"
+          rel="noopener"
+          class="btn secondary">
+          <span class="lang-en">View GitHub</span>
+          <span class="lang-fr" style="display:none">Voir le dépôt GitHub</span>
+        </a>
+
+      </div>
+    </div>
+
+
+    <h3 class="gallery-title">Visual Gallery</h3>
+    <div class="project-grid">
+      <img src="../images/solia-1.png" alt="">
+      <img src="../images/solia-2.png" alt="">
+      <img src="../images/solia-3.png" alt="">
+      <img src="../images/solia-4.png" alt="">
+      <img src="../images/solia-5.png" alt="">
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2025 — Kim Ngan THAI
+</footer>
+<script src="../main.js"></script>
+
+<div class="image-modal" id="imageModal">
+  <img id="modalImage" src="" alt="">
+</div>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  document.querySelectorAll(".project-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+</script>
+
+
+</body>
+</html>
