@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const langText = langBtn ? langBtn.querySelector('.lang-text') : null;
   
   // 1. Charger la langue sauvegardée OU défaut 'en'
-  let currentLang = localStorage.getItem('siteLanguage') || 'en';
+  let currentLang = localStorage.getItem('siteLanguage') || 'fr';
   
   // Appliquer la langue tout de suite
   updateLanguage(currentLang);
